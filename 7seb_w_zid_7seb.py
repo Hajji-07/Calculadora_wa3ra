@@ -63,10 +63,10 @@ def calcul(x,y):
         elif y == "*":
             result *= num
         elif y == "/":
-            if num == 0 :
-                return "Erreur division par 0 impossible"
-            else:
+            try:
                 result /= num
+            except ZeroDivisionError:
+                return "Erreur: division par 0 impossible"
     return result
 def main():
     """
